@@ -48,19 +48,19 @@ int main(void)
         return -1;
     }
   
-   while (1)
-        {
+    while (1)
+    {
             int n = read(imu_port, &read_buf, sizeof(read_buf) - 1);
 	
 	        if (n >= 0) {
 	        read_buf[n] = '\0';
-    	}
+    }
 	
 	else
-        {
+    {
             printf("Error reading data from the port\n");
             return -1;
-        }
+    }
         parse_imu_data(read_buf);
     }
 
@@ -99,7 +99,7 @@ void parse_imu_data(unsigned char imu_data[])
 	QuaternionW != NULL && yaw != NULL && pitch != NULL && roll != NULL){
         
         printf("accX = %s\n", accX); 
-	    printf("accX = %s\n", accX);
+	printf("accX = %s\n", accX);
         printf("accY = %s\n", accY);
         printf("accZ = %s\n", accZ);
         printf("gyroX = %s\n", gyroX);
